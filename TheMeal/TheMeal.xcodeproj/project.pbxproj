@@ -13,6 +13,8 @@
 		10714D992AD0EBE900E26AD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10714D972AD0EBE900E26AD0 /* Main.storyboard */; };
 		10714D9B2AD0EBEC00E26AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10714D9A2AD0EBEC00E26AD0 /* Assets.xcassets */; };
 		10714D9E2AD0EBEC00E26AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10714D9C2AD0EBEC00E26AD0 /* LaunchScreen.storyboard */; };
+		10FB86482AD38ABD00190D38 /* Siesta in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86472AD38ABD00190D38 /* Siesta */; };
+		10FB864A2AD38ABD00190D38 /* SiestaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86492AD38ABD00190D38 /* SiestaUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FB86482AD38ABD00190D38 /* Siesta in Frameworks */,
+				10FB864A2AD38ABD00190D38 /* SiestaUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = TheMeal;
+			packageProductDependencies = (
+				10FB86472AD38ABD00190D38 /* Siesta */,
+				10FB86492AD38ABD00190D38 /* SiestaUI */,
+			);
 			productName = TheMeal;
 			productReference = 10714D8E2AD0EBE900E26AD0 /* TheMeal.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 10714D852AD0EBE900E26AD0;
+			packageReferences = (
+				10FB86462AD38ABD00190D38 /* XCRemoteSwiftPackageReference "siesta" */,
+			);
 			productRefGroup = 10714D8F2AD0EBE900E26AD0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -361,6 +372,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10FB86462AD38ABD00190D38 /* XCRemoteSwiftPackageReference "siesta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bustoutsolutions/siesta";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10FB86472AD38ABD00190D38 /* Siesta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10FB86462AD38ABD00190D38 /* XCRemoteSwiftPackageReference "siesta" */;
+			productName = Siesta;
+		};
+		10FB86492AD38ABD00190D38 /* SiestaUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10FB86462AD38ABD00190D38 /* XCRemoteSwiftPackageReference "siesta" */;
+			productName = SiestaUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10714D862AD0EBE900E26AD0 /* Project object */;
 }
