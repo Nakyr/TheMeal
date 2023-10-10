@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101AC9522AD4BFEA0006731F /* TheMealAPI+Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AC9512AD4BFEA0006731F /* TheMealAPI+Meals.swift */; };
+		101AC9542AD4C0CE0006731F /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AC9532AD4C0CE0006731F /* Meals.swift */; };
+		101AC9562AD4C17E0006731F /* MealsById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AC9552AD4C17E0006731F /* MealsById.swift */; };
+		101AC9582AD4C9EC0006731F /* TheMealAPI+MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AC9572AD4C9EC0006731F /* TheMealAPI+MealDetail.swift */; };
 		10714D922AD0EBE900E26AD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10714D912AD0EBE900E26AD0 /* AppDelegate.swift */; };
 		10714D942AD0EBE900E26AD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10714D932AD0EBE900E26AD0 /* SceneDelegate.swift */; };
 		10714D962AD0EBE900E26AD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10714D952AD0EBE900E26AD0 /* ViewController.swift */; };
@@ -15,9 +19,16 @@
 		10714D9E2AD0EBEC00E26AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10714D9C2AD0EBEC00E26AD0 /* LaunchScreen.storyboard */; };
 		10FB86482AD38ABD00190D38 /* Siesta in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86472AD38ABD00190D38 /* Siesta */; };
 		10FB864A2AD38ABD00190D38 /* SiestaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86492AD38ABD00190D38 /* SiestaUI */; };
+		10FB864F2AD38DEA00190D38 /* TheMealAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB864E2AD38DEA00190D38 /* TheMealAPI.swift */; };
+		10FB86522AD393E000190D38 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB86512AD393E000190D38 /* Meal.swift */; };
+		10FB86542AD393EB00190D38 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB86532AD393EB00190D38 /* MealDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101AC9512AD4BFEA0006731F /* TheMealAPI+Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TheMealAPI+Meals.swift"; sourceTree = "<group>"; };
+		101AC9532AD4C0CE0006731F /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		101AC9552AD4C17E0006731F /* MealsById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsById.swift; sourceTree = "<group>"; };
+		101AC9572AD4C9EC0006731F /* TheMealAPI+MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TheMealAPI+MealDetail.swift"; sourceTree = "<group>"; };
 		10714D8E2AD0EBE900E26AD0 /* TheMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10714D912AD0EBE900E26AD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10714D932AD0EBE900E26AD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +37,9 @@
 		10714D9A2AD0EBEC00E26AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10714D9D2AD0EBEC00E26AD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10714D9F2AD0EBEC00E26AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10FB864E2AD38DEA00190D38 /* TheMealAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealAPI.swift; sourceTree = "<group>"; };
+		10FB86512AD393E000190D38 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		10FB86532AD393EB00190D38 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 		10714D902AD0EBE900E26AD0 /* TheMeal */ = {
 			isa = PBXGroup;
 			children = (
+				10FB864D2AD38DC400190D38 /* Networking */,
 				10714D912AD0EBE900E26AD0 /* AppDelegate.swift */,
 				10714D932AD0EBE900E26AD0 /* SceneDelegate.swift */,
 				10714D952AD0EBE900E26AD0 /* ViewController.swift */,
@@ -69,6 +84,28 @@
 				10714D9F2AD0EBEC00E26AD0 /* Info.plist */,
 			);
 			path = TheMeal;
+			sourceTree = "<group>";
+		};
+		10FB864D2AD38DC400190D38 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				10FB86502AD3919D00190D38 /* Models */,
+				10FB864E2AD38DEA00190D38 /* TheMealAPI.swift */,
+				101AC9512AD4BFEA0006731F /* TheMealAPI+Meals.swift */,
+				101AC9572AD4C9EC0006731F /* TheMealAPI+MealDetail.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		10FB86502AD3919D00190D38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10FB86512AD393E000190D38 /* Meal.swift */,
+				10FB86532AD393EB00190D38 /* MealDetail.swift */,
+				101AC9532AD4C0CE0006731F /* Meals.swift */,
+				101AC9552AD4C17E0006731F /* MealsById.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101AC9542AD4C0CE0006731F /* Meals.swift in Sources */,
+				101AC9582AD4C9EC0006731F /* TheMealAPI+MealDetail.swift in Sources */,
+				10FB86522AD393E000190D38 /* Meal.swift in Sources */,
 				10714D962AD0EBE900E26AD0 /* ViewController.swift in Sources */,
+				101AC9522AD4BFEA0006731F /* TheMealAPI+Meals.swift in Sources */,
+				10FB864F2AD38DEA00190D38 /* TheMealAPI.swift in Sources */,
+				101AC9562AD4C17E0006731F /* MealsById.swift in Sources */,
+				10FB86542AD393EB00190D38 /* MealDetail.swift in Sources */,
 				10714D922AD0EBE900E26AD0 /* AppDelegate.swift in Sources */,
 				10714D942AD0EBE900E26AD0 /* SceneDelegate.swift in Sources */,
 			);
