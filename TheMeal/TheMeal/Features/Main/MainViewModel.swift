@@ -15,6 +15,7 @@ class MainViewModel {
     var showActivityIndicator: ((_ show: Bool) -> Void)?
     var reloadTable: (() -> Void)?
     var showError: ((_ show: Bool, _ message: String) -> Void)?
+    var showMealDetail: ((_ viewModel: MealDetailViewModel) -> Void)?
     
     var rows: Int {
         return meals.count
@@ -47,5 +48,11 @@ extension MainViewModel {
     
     func itemAt(index: Int) -> Meal {
         return meals[index]
+    }
+    
+    func rowWasSelected(row: Int) {
+        let item = itemAt(index: row)
+        let viewModel = MealDetailViewModel(apiClient: apiClient, id: item.idMeal)
+        self.showMealDetail?(viewModel)
     }
 }

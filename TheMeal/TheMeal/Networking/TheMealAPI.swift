@@ -35,7 +35,7 @@ private struct TheMealErrorMessageExtractor: ResponseTransformer {
     let jsonDecoder: JSONDecoder
 
     func process(_ response: Response) -> Response {
-        guard case .failure(var error) = response, let errorData: Data = error.typedContent(), let registerError = try? jsonDecoder.decode(SpotifyRegisterErrorEnvelope.self, from: errorData) else {
+        guard case .failure(var error) = response, let errorData: Data = error.typedContent(), let registerError = try? jsonDecoder.decode(TheMealRegisterErrorEnvelope.self, from: errorData) else {
             return response
         }
         if let message = registerError.errors?.first?.value.first {
@@ -46,7 +46,7 @@ private struct TheMealErrorMessageExtractor: ResponseTransformer {
         return .failure(error)
     }
 
-    private struct SpotifyRegisterErrorEnvelope: Decodable {
+    private struct TheMealRegisterErrorEnvelope: Decodable {
         let message: String
         let errors: [String: [String]]?
     }
