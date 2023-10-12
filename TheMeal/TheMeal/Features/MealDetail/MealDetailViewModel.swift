@@ -27,7 +27,7 @@ extension MealDetailViewModel {
         getMealDetails(id: self.id)
     }
     
-    func getMealDetails(id: String) {
+    private func getMealDetails(id: String) {
         showActivityIndicator?(true)
         apiClient.getMealDetailBy(id: self.id) { [weak self] result in
             self?.showActivityIndicator?(false)
