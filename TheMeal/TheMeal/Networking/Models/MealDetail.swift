@@ -57,8 +57,65 @@ struct MealDetail: Codable {
     let strMeasure18: String?
     let strMeasure19: String?
     let strMeasure20: String?
-    let strSource: String
+    let strSource: String?
     let strImageSource: String?
     let strCreativeCommonsConfirmed: String?
     let dateModified: String?
+}
+
+extension MealDetail {
+    private func allIngredients() -> [String] {
+        let ingredients = [strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
+                           strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
+                           strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15,
+                           strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20]
+        
+        let allIngredients: [String] = ingredients.compactMap { item in
+            if item.isEmptyOrWhitespace {
+                return nil
+            } else {
+                return item
+            }
+        }
+        
+        return allIngredients
+    }
+    
+    private func allMeasurements() -> [String] {
+        let measurements = [strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,
+                            strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10,
+                            strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15,
+                            strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20]
+        
+        let allMeasurements: [String] = measurements.compactMap { item in
+            if item.isEmptyOrWhitespace {
+                return nil
+            } else {
+                return item
+            }
+        }
+        
+        return allMeasurements
+    }
+    
+    func allIngredientsAndMeasurements() -> String {
+        let ingredients = allIngredients()
+        var measurements = allMeasurements()
+        var result = ""
+        
+        if measurements.count > ingredients.count {
+            let difference = measurements.count - ingredients.count
+            for _ in 0...difference {
+                measurements.append("")
+            }
+        }
+        
+        for index in 0...ingredients.count-1 {
+            let ingredient = ingredients[index]
+            let measurement = measurements[index]
+            
+            result = result + "-" + " " + ingredient + " " + measurement + "\n"
+        }
+        return result
+    }
 }

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.bind()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "MealTableViewCell", bundle: nil), forCellReuseIdentifier: MealTableViewCell.reuseIdentifier)
         viewModel.didLoad()
     }
@@ -42,6 +43,21 @@ extension ViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        viewModel.showMealDetail = { [weak self] mealDetailViewModel in
+            guard let self = self else { return }
+            let mealDetailViewcontroller = MealDetailViewController.make(viewModel: mealDetailViewModel)
+            let navigationController = UINavigationController(rootViewController: mealDetailViewcontroller)
+            let barButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(close(_:)))
+            mealDetailViewcontroller.navigationItem.leftBarButtonItem = barButton
+            DispatchQueue.main.async {
+                self.present(navigationController, animated: true)
+            }
+        }
+    }
+    
+    @objc func close(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }
 
@@ -57,6 +73,14 @@ extension ViewController: UITableViewDataSource {
             mealTableViewCell.fillWith(name: item.strMeal, urlImage: item.strMealThumb)
         }
         
+        cell.selectionStyle = .none
+        
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.rowWasSelected(row: indexPath.row)
     }
 }
