@@ -28,6 +28,10 @@ extension MealDetailViewModel {
         getMealDetails(id: self.id)
     }
     
+    func retryButtonWasTapped() {
+        getMealDetails(id: self.id)
+    }
+    
     private func getMealDetails(id: String) {
         showActivityIndicator?(true)
         hideFullScreenError?()
@@ -41,9 +45,5 @@ extension MealDetailViewModel {
                 self?.showFullScreenError?("Ups! an error has occurred")
             }
         }
-    }
-    
-    func retryButtonWasTapped() {
-        getMealDetails(id: self.id)
     }
 }

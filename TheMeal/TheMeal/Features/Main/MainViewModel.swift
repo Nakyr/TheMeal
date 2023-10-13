@@ -28,10 +28,24 @@ extension MainViewModel {
     func didLoad() {
         self.getMeals()
     }
+    
+    func retryButtonWasTapped() {
+        self.getMeals()
+    }
+    
+    func itemAt(index: Int) -> Meal {
+        return meals[index]
+    }
+    
+    func rowWasSelected(row: Int) {
+        let item = itemAt(index: row)
+        let viewModel = MealDetailViewModel(apiClient: apiClient, id: item.idMeal)
+        self.showMealDetail?(viewModel)
+    }
 }
 
 extension MainViewModel {
-    func getMeals() {
+    private func getMeals() {
         showActivityIndicator?(true)
         hideFullScreenError?()
         apiClient.getMeals { [weak self] result in
@@ -46,15 +60,5 @@ extension MainViewModel {
                 self.showFullScreenError?("Ups! an error has occurred")
             }
         }
-    }
-    
-    func itemAt(index: Int) -> Meal {
-        return meals[index]
-    }
-    
-    func rowWasSelected(row: Int) {
-        let item = itemAt(index: row)
-        let viewModel = MealDetailViewModel(apiClient: apiClient, id: item.idMeal)
-        self.showMealDetail?(viewModel)
     }
 }

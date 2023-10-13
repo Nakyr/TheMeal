@@ -102,6 +102,6 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: FullScreenErrorPresenter {
     func retryFullScreenErrorBlockCalled() {
-        viewModel.getMeals()
+        viewModel.retryButtonWasTapped()
     }
 }
