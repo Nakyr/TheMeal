@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Message View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MessageViewController" id="Y6W-OH-hqX" customClass="MessageViewController" customModule="TheMeal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rxz-X3-UFg">
+                                <rect key="frame" x="0.0" y="393.66666666666669" width="393" height="64.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ups! an error has occurred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-mp-QxP" userLabel="Message Label">
+                                        <rect key="frame" x="90.333333333333329" y="0.0" width="212.33333333333337" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-PL-eAf" userLabel="Retry Button">
+                                        <rect key="frame" x="164.33333333333334" y="30.333333333333318" width="64.666666666666657" height="34.333333333333343"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Retry">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="retryButtonTouched:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wmE-so-r6m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rxz-X3-UFg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4yo-Sr-S94"/>
+                            <constraint firstItem="Rxz-X3-UFg" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="5zP-Y7-Ss1"/>
+                            <constraint firstItem="Rxz-X3-UFg" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ika-uJ-6xB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="z8E-PL-eAf" id="cbS-GU-hDu"/>
+                        <outlet property="messageLabel" destination="GK6-mp-QxP" id="LYm-fb-ldA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

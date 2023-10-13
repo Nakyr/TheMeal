@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="aKv-3I-8bN">
-                                <rect key="frame" x="178" y="407" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbG-s2-fwz">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
@@ -79,6 +75,10 @@
                                     <constraint firstAttribute="trailing" secondItem="7f5-mb-epX" secondAttribute="trailing" id="n1b-i9-OiA"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="aKv-3I-8bN">
+                                <rect key="frame" x="178" y="407" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

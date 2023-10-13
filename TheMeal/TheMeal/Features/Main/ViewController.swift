@@ -54,6 +54,21 @@ extension ViewController {
                 self.present(navigationController, animated: true)
             }
         }
+        
+        viewModel.showFullScreenError = { [weak self] message in
+            guard let self = self else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.showFullScreenError(message: message)
+            }
+        }
+        
+        viewModel.hideFullScreenError = { [weak self] in
+            DispatchQueue.main.async {
+                self?.dismissFullScreenError()
+            }
+        }
     }
     
     @objc func close(_ sender: UIButton) {
@@ -82,5 +97,11 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.rowWasSelected(row: indexPath.row)
+    }
+}
+
+extension ViewController: FullScreenErrorPresenter {
+    func retryFullScreenErrorBlockCalled() {
+        viewModel.retryButtonWasTapped()
     }
 }

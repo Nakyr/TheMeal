@@ -14,7 +14,8 @@ class MealDetailViewModel {
     
     var showActivityIndicator: ((_ show: Bool) -> Void)?
     var updateInfo: ((_ meal: MealDetail) -> Void)?
-    var showError: ((_ show: Bool, _ message: String) -> Void)?
+    var showFullScreenError: ((_ message: String) -> Void)?
+    var hideFullScreenError: (() -> Void)?
     
     init(apiClient: TheMealAPI, id: String) {
         self.apiClient = apiClient
@@ -27,8 +28,13 @@ extension MealDetailViewModel {
         getMealDetails(id: self.id)
     }
     
+    func retryButtonWasTapped() {
+        getMealDetails(id: self.id)
+    }
+    
     private func getMealDetails(id: String) {
         showActivityIndicator?(true)
+        hideFullScreenError?()
         apiClient.getMealDetailBy(id: self.id) { [weak self] result in
             self?.showActivityIndicator?(false)
             switch result {
@@ -36,7 +42,7 @@ extension MealDetailViewModel {
                 self?.meal = mealById.meals.first
                 self?.updateInfo?(mealById.meals[0])
             case .failure(_):
-                break
+                self?.showFullScreenError?("Ups! an error has occurred")
             }
         }
     }
