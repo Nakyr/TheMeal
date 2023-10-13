@@ -58,5 +58,26 @@ extension MealDetailViewController {
                 self?.ingredientsLabel.text = "Ingredients: \n" + meal.allIngredientsAndMeasurements()
             }
         }
+        
+        viewModel.showFullScreenError = { [weak self] message in
+            guard let self = self else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.showFullScreenError(message: message)
+            }
+        }
+        
+        viewModel.hideFullScreenError = { [weak self] in
+            DispatchQueue.main.async {
+                self?.dismissFullScreenError()
+            }
+        }
+    }
+}
+
+extension MealDetailViewController: FullScreenErrorPresenter {
+    func retryFullScreenErrorBlockCalled() {
+        viewModel.retryButtonWasTapped()
     }
 }
