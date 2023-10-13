@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MealListViewController: UIViewController {
 
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
-    private var viewModel = MainViewModel()
+    private var viewModel = MealListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension MealListViewController {
     func bind() {
         viewModel.showActivityIndicator = { [weak self] show in
             DispatchQueue.main.async {
@@ -76,7 +76,7 @@ extension ViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension MealListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.rows
     }
@@ -94,13 +94,13 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension MealListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.rowWasSelected(row: indexPath.row)
     }
 }
 
-extension ViewController: FullScreenErrorPresenter {
+extension MealListViewController: FullScreenErrorPresenter {
     func retryFullScreenErrorBlockCalled() {
         viewModel.retryButtonWasTapped()
     }

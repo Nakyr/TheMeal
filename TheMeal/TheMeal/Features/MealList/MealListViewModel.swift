@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainViewModel {
+class MealListViewModel {
     private var apiClient: TheMealAPI = TheMealAPI()
     
     var meals: [Meal] = []
@@ -24,7 +24,7 @@ class MainViewModel {
     
 }
 
-extension MainViewModel {
+extension MealListViewModel {
     func didLoad() {
         self.getMeals()
     }
@@ -44,7 +44,7 @@ extension MainViewModel {
     }
 }
 
-extension MainViewModel {
+extension MealListViewModel {
     private func getMeals() {
         showActivityIndicator?(true)
         hideFullScreenError?()
