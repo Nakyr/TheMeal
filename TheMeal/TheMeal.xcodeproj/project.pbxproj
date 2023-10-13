@@ -25,6 +25,10 @@
 		10A8AA092AD7391100EBE90D /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8AA082AD7391100EBE90D /* MealDetailViewModel.swift */; };
 		10A8AA0C2AD7539F00EBE90D /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8AA0B2AD7539F00EBE90D /* String+Validation.swift */; };
 		10A8AA0E2AD7543C00EBE90D /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8AA0D2AD7543C00EBE90D /* Storyboarded.swift */; };
+		10A8F8492AD89E8900B5F8ED /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8F8482AD89E8900B5F8ED /* MessageViewController.swift */; };
+		10A8F84B2AD89EAE00B5F8ED /* MessageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A8F84A2AD89EAE00B5F8ED /* MessageViewController.storyboard */; };
+		10A8F84D2AD8BCB200B5F8ED /* FullScreenErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8F84C2AD8BCB200B5F8ED /* FullScreenErrorPresenter.swift */; };
+		10A8F84F2AD9068B00B5F8ED /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8F84E2AD9068B00B5F8ED /* UIViewController+Container.swift */; };
 		10FB86482AD38ABD00190D38 /* Siesta in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86472AD38ABD00190D38 /* Siesta */; };
 		10FB864A2AD38ABD00190D38 /* SiestaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 10FB86492AD38ABD00190D38 /* SiestaUI */; };
 		10FB864F2AD38DEA00190D38 /* TheMealAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB864E2AD38DEA00190D38 /* TheMealAPI.swift */; };
@@ -53,6 +57,10 @@
 		10A8AA082AD7391100EBE90D /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		10A8AA0B2AD7539F00EBE90D /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		10A8AA0D2AD7543C00EBE90D /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		10A8F8482AD89E8900B5F8ED /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		10A8F84A2AD89EAE00B5F8ED /* MessageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageViewController.storyboard; sourceTree = "<group>"; };
+		10A8F84C2AD8BCB200B5F8ED /* FullScreenErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenErrorPresenter.swift; sourceTree = "<group>"; };
+		10A8F84E2AD9068B00B5F8ED /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
 		10FB864E2AD38DEA00190D38 /* TheMealAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealAPI.swift; sourceTree = "<group>"; };
 		10FB86512AD393E000190D38 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		10FB86532AD393EB00190D38 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 		101AC9592AD4D8D70006731F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				10A8F8462AD87F6200B5F8ED /* ErrorView */,
 				10A8AA032AD731BD00EBE90D /* MealDetail */,
 				101AC95A2AD4D8EB0006731F /* Main */,
 			);
@@ -138,8 +147,27 @@
 			children = (
 				10A8AA0B2AD7539F00EBE90D /* String+Validation.swift */,
 				10A8AA0D2AD7543C00EBE90D /* Storyboarded.swift */,
+				10A8F84E2AD9068B00B5F8ED /* UIViewController+Container.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		10A8F8462AD87F6200B5F8ED /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				10A8F8472AD89E6800B5F8ED /* MessageView */,
+				10A8F84C2AD8BCB200B5F8ED /* FullScreenErrorPresenter.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		10A8F8472AD89E6800B5F8ED /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				10A8F8482AD89E8900B5F8ED /* MessageViewController.swift */,
+				10A8F84A2AD89EAE00B5F8ED /* MessageViewController.storyboard */,
+			);
+			path = MessageView;
 			sourceTree = "<group>";
 		};
 		10FB864D2AD38DC400190D38 /* Networking */ = {
@@ -233,6 +261,7 @@
 				10714D9E2AD0EBEC00E26AD0 /* LaunchScreen.storyboard in Resources */,
 				10714D9B2AD0EBEC00E26AD0 /* Assets.xcassets in Resources */,
 				10714D992AD0EBE900E26AD0 /* Main.storyboard in Resources */,
+				10A8F84B2AD89EAE00B5F8ED /* MessageViewController.storyboard in Resources */,
 				10A8AA072AD7327500EBE90D /* MealDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,9 +283,12 @@
 				10A8AA052AD7325000EBE90D /* MealDetailViewController.swift in Sources */,
 				101AC9562AD4C17E0006731F /* MealsById.swift in Sources */,
 				10FB86542AD393EB00190D38 /* MealDetail.swift in Sources */,
+				10A8F84D2AD8BCB200B5F8ED /* FullScreenErrorPresenter.swift in Sources */,
 				101AC9602AD4DACC0006731F /* MealTableViewCell.swift in Sources */,
 				10714D922AD0EBE900E26AD0 /* AppDelegate.swift in Sources */,
 				10714D942AD0EBE900E26AD0 /* SceneDelegate.swift in Sources */,
+				10A8F84F2AD9068B00B5F8ED /* UIViewController+Container.swift in Sources */,
+				10A8F8492AD89E8900B5F8ED /* MessageViewController.swift in Sources */,
 				10A8AA092AD7391100EBE90D /* MealDetailViewModel.swift in Sources */,
 				101AC95C2AD4D99C0006731F /* MainViewModel.swift in Sources */,
 				10A8AA0E2AD7543C00EBE90D /* Storyboarded.swift in Sources */,

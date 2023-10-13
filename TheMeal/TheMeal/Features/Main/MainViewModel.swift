@@ -14,8 +14,9 @@ class MainViewModel {
     
     var showActivityIndicator: ((_ show: Bool) -> Void)?
     var reloadTable: (() -> Void)?
-    var showError: ((_ show: Bool, _ message: String) -> Void)?
     var showMealDetail: ((_ viewModel: MealDetailViewModel) -> Void)?
+    var showFullScreenError: ((_ message: String) -> Void)?
+    var hideFullScreenError: (() -> Void)?
     
     var rows: Int {
         return meals.count
@@ -32,6 +33,7 @@ extension MainViewModel {
 extension MainViewModel {
     func getMeals() {
         showActivityIndicator?(true)
+        hideFullScreenError?()
         apiClient.getMeals { [weak self] result in
             self?.showActivityIndicator?(false)
             guard let self = self else { return }
@@ -40,8 +42,8 @@ extension MainViewModel {
             case .success(let meals):
                 self.meals = meals.meals
                 self.reloadTable?()
-            case .failure(let error):
-                showError?(true, error.localizedDescription)
+            case .failure(_):
+                self.showFullScreenError?("Ups! an error has occurred")
             }
         }
     }
